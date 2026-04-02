@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Ewert&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-headline: "Ewert", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Ewert", serif;
+
+  --color-surface-bright: #fff8ef;
+  --color-on-secondary: #ffffff;
+  --color-surface: #fff8ef;
+  --color-on-primary: #ffffff;
+  --color-tertiary-fixed-dim: #ffd700;
+  --color-on-tertiary-container: #3a2c00;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-tertiary: #D4AF37;
+  --color-outline: #877273;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-primary-fixed-variant: #7a2c39;
+  --color-surface-container-low: #faf3e8;
+  --color-on-secondary-container: #3f687c;
+  --color-surface-container-highest: #e8e2d7;
+  --color-tertiary-container: #D4AF37;
+  --color-surface-tint: #984350;
+  --color-inverse-primary: #ffb2ba;
+  --color-on-surface-variant: #544244;
+  --color-secondary: #3a6378;
+  --color-secondary-fixed: #c1e8ff;
+  --color-on-primary-fixed: #400010;
+  --color-tertiary-fixed: #FFD700;
+  --color-background: #fff8ef;
+  --color-on-tertiary-fixed: #241a00;
+  --color-on-primary-container: #ff99a5;
+  --color-primary: #5e1625;
+  --color-on-secondary-fixed-variant: #214b5f;
+  --color-secondary-container: #bce6fe;
+  --color-surface-container-high: #eee7dc;
+  --color-inverse-surface: #333029;
+  --color-on-error-container: #93000a;
+  --color-on-secondary-fixed: #001e2b;
+  --color-on-surface: #1e1b15;
+  --color-inverse-on-surface: #f7f0e5;
+  --color-on-background: #1e1b15;
+  --color-primary-fixed-dim: #ffb2ba;
+  --color-surface-dim: #e0d9cf;
+  --color-primary-container: #7b2d3a;
+  --color-surface-container: #f4ede2;
+  --color-on-tertiary-fixed-variant: #705900;
+  --color-error: #ba1a1a;
+  --color-surface-variant: #e8e2d7;
+  --color-outline-variant: #dac1c2;
+  --color-secondary-fixed-dim: #a3cce4;
+  --color-primary-fixed: #ffd9dc;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+@layer utilities {
+  .diagonal-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(212, 175, 55, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  .courtesan-shadow {
+    box-shadow: 0 20px 40px rgba(123, 45, 58, 0.08);
+  }
+  .ticker {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: ticker 40s linear infinite;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface text-on-surface font-body selection:bg-primary/20 selection:text-primary;
+}

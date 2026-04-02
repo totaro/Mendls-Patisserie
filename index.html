@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mendl's Patisserie</title>
+  </head>
+  <body>
+    <div class="min-h-screen">
+      <!-- 1. STICKY NAV -->
+      <nav class="fixed top-0 w-full z-50 border-b-2 border-tertiary bg-surface transition-all duration-500 flex justify-between items-center px-6 md:px-12 py-6 max-w-full">
+        <a class="text-2xl font-display text-primary tracking-tighter hover:scale-105 transition-transform duration-300 ease-out relative z-50" href="#">Mendl's</a>
+        
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-10">
+          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary font-bold border-b border-tertiary-container" href="#story">Our Story</a>
+          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#menu">The Patisserie</a>
+          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#visit">Locations</a>
+          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#gift">Special Deliveries</a>
+        </div>
+
+        <div class="flex items-center gap-4 relative z-50">
+          <!-- Order Now Button (Changed to link) -->
+          <a href="#menu" class="bg-primary text-on-primary px-6 py-2 text-xs font-label uppercase tracking-widest rounded-sm hover:scale-105 transition-all active:scale-95 text-center">
+            Order Now
+          </a>
+          
+          <!-- Mobile Menu Toggle Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-primary p-2 focus:outline-none cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="fixed inset-0 bg-surface z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 translate-x-full md:hidden pt-20">
+        <a class="mobile-link font-headline uppercase tracking-[0.2em] text-2xl text-primary hover:scale-105 transition-transform" href="#story">Our Story</a>
+        <a class="mobile-link font-headline uppercase tracking-[0.2em] text-2xl text-primary hover:scale-105 transition-transform" href="#menu">The Patisserie</a>
+        <a class="mobile-link font-headline uppercase tracking-[0.2em] text-2xl text-primary hover:scale-105 transition-transform" href="#visit">Locations</a>
+        <a class="mobile-link font-headline uppercase tracking-[0.2em] text-2xl text-primary hover:scale-105 transition-transform" href="#gift">Special Deliveries</a>
+      </div>
+
+      <!-- 2. HERO -->
+      <header 
+        class="relative min-h-screen flex items-center justify-center pt-24 pb-32 overflow-hidden bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxYwVzg7jEOL10llxTcaKq5tc-6R09I9dchbutO5N-HImwf0coovDUy2vrl1WH9bovoD9U1o3Eig9eOVHuQhmdqc_UI1dvzLtOfjXdc7N3vvk08hiE7L1kjFTtZcVw8tw1PRrEGhB2s6d-q9-KUf5mzdolRC-PkJLHeqib169aTJiYHQISaX1qU8uggL2nKK5WPVdqYlYKw4MTiik_RzAsflXvSmkxo-oyhVsUP8NJzBeTXgpivOxqmrZhp8_nVpZ6bFF2BWIQTg')"
+      >
+        <div class="absolute inset-0 bg-black/30 z-0"></div>
+        <div class="absolute inset-0 diagonal-grid opacity-30 z-10"></div>
+        
+        <!-- Decorative Frames -->
+        <div class="absolute top-32 left-8 md:left-12 text-tertiary-container select-none z-20 text-6xl opacity-100 drop-shadow-sm">❧</div>
+        <div class="absolute top-32 right-8 md:right-12 text-tertiary-container rotate-90 select-none z-20 text-6xl opacity-100 drop-shadow-sm">❧</div>
+        <div class="absolute bottom-8 left-8 md:left-12 text-tertiary-container -rotate-90 select-none z-20 text-6xl opacity-100 drop-shadow-sm">❧</div>
+        <div class="absolute bottom-8 right-8 md:right-12 text-tertiary-container rotate-180 select-none z-20 text-6xl opacity-100 drop-shadow-sm">❧</div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <div class="fade-in inline-flex items-center gap-4 mb-8">
+            <div class="h-px w-8 bg-tertiary-container"></div>
+            <span class="font-label uppercase tracking-[0.3em] text-tertiary-container text-sm font-bold">EST. MDCCCLXXXVII</span>
+            <div class="h-px w-8 bg-tertiary-container"></div>
+          </div>
+          
+          <h1 class="fade-in font-display text-7xl md:text-9xl text-surface-bright mb-6 tracking-tighter" style="animation-delay: 0.2s;">
+            Mendl's
+          </h1>
+          
+          <p class="fade-in font-body italic text-xl md:text-3xl text-surface-bright/90 mb-12 max-w-2xl mx-auto leading-relaxed" style="animation-delay: 0.4s;">
+            "The most delicate of delights, delivered with the utmost discretion and artisanal precision."
+          </p>
+          
+          <div class="fade-in flex flex-col md:flex-row items-center justify-center gap-6" style="animation-delay: 0.6s;">
+            <a class="bg-primary text-on-primary px-10 py-4 font-label uppercase tracking-widest text-sm hover:scale-105 transition-all" href="#menu">Explore the Menu</a>
+            <a class="border-tertiary-container text-tertiary-container px-10 py-4 font-label uppercase tracking-widest text-sm hover:bg-tertiary-container hover:text-secondary transition-all border-2 border-tertiary-container font-bold" href="#courtesan">Our Signature</a>
+          </div>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-tertiary-container"><path d="m7 6 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg>
+        </div>
+      </header>
+
+      <!-- 3. THE COURTESAN AU CHOCOLAT -->
+      <section class="py-24 px-6 md:px-12 bg-surface" id="courtesan">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="flex justify-center order-2 lg:order-1">
+            <div class="relative w-full max-w-md aspect-square courtesan-shadow overflow-hidden group">
+              <img 
+                alt="Courtesan au Chocolat" 
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg2wJ7Kdzzb4tfZx1uddfkZYhLyDMMh5Mfc6AosmLKtePuD42A0O_H_rjbGeSSwJCkxX2DNlfTQiWQl_OuPW-jXqd_LVmtCZzvfO9LqGDvQ88OnOCPbbBqj2SBUOHva-0EkNxD9FYM7v2zyM9RwBebFbtN48gVzHLpFNkoRydp5Vf9RgvE10ZTmLyNgBWHfITnZE5XnR2b6euRLtgi1XL7es5fTzsidrs6FmrITL2DdUy0YI0DZB4s3ZV5vjb5L3xlBGiYuSUlQA"
+                referrerpolicy="no-referrer"
+              />
+              <div class="absolute inset-0 border-[12px] border-surface transition-all duration-500 group-hover:border-[8px]"></div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">The Masterpiece</span>
+            <h2 class="font-display text-5xl md:text-6xl text-primary mb-8 leading-tight">Courtesan au Chocolat</h2>
+            <p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+              A three-tiered puff pastry, meticulously filled with a rich chocolate crème patissière, finished with delicate rosewater icing and topped with a single cocoa bean. It is, quite simply, the pride of Zubrowka.
+            </p>
+            <div class="flex items-center justify-between py-6 border-y border-outline-variant/30 mb-8">
+              <span class="font-display text-4xl text-primary">14.50 CHF</span>
+              <button class="bg-primary text-on-primary px-8 py-3 font-label text-sm uppercase tracking-widest hover:scale-105 transition-all">Add to Box</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. THE PASTRY MENU -->
+      <section class="py-24 px-6 md:px-12 bg-surface-container-low" id="menu">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-display text-5xl text-primary mb-6">The Daily Display</h2>
+            <div class="flex flex-wrap justify-center gap-8 mb-12">
+              <button class="font-label text-xs uppercase tracking-[0.2em] text-primary border-b-2 border-primary pb-2">All Delights</button>
+              <button class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors pb-2">Cakes</button>
+              <button class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors pb-2">Pastries</button>
+              <button class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors pb-2">Seasonal</button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- MenuItem 1 -->
+            <div class="group">
+              <div class="aspect-square bg-surface-container overflow-hidden mb-4 relative">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiRnnylpa8zV9rfLlI7k5E5PszL3sMfCaB7HLEsVyAfATv2USIrplqpStHO4MG-CVfKk_duCrpBEmxYP4uDdCxaWGtDa5F4VQ-Ibt6T01BXxS154sbzoR9hGx4xNl7xnX6b3xQmdOL2HTdHMnTS3_5XeOtQ5LseQll4cay30vZ51NjqygRD1NK7NUMvNQnvL9tLJrWNQMCp8u47CqqnGOo2QkwK14GKdwWxVUoplLdeXRW3-7_Apx0X10yf1D53t1v_bW80BBnVA" alt="Gâteau Mendl" referrerpolicy="no-referrer" />
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              <h3 class="font-display text-xl text-primary mb-1">Gâteau Mendl</h3>
+              <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Vanilla sponge & apricot glaze</p>
+            </div>
+            <!-- MenuItem 2 -->
+            <div class="group">
+              <div class="aspect-square bg-surface-container overflow-hidden mb-4 relative">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbhBdgs1taJbAi4LpcnBSTCCAqVmS9AYAJTu_fjTkiU2ORDIerAtu4mSLx97yk51SH6VO0AwC6zqaysBUZ3WXOIMIohYIGnhzhK30vfqr67xXPwxMyvbgEVW0SahP9sAi311BIpYH5PVeX3Z7xDmQ43T-oEn_XYvx1OhNno0PnpUfquOhf7_9KSIpRlkyRByaYMH6On_c4xCHYpm5ZDKfPCc3719KwsQDP5Ulvo5azqzBQmIjp_Lg6PoLn19S3qgMgOFN1jybkxQ" alt="Tarte aux Mirabelles" referrerpolicy="no-referrer" />
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              <h3 class="font-display text-xl text-primary mb-1">Tarte aux Mirabelles</h3>
+              <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Seasonal plum custard</p>
+            </div>
+            <!-- MenuItem 3 -->
+            <div class="group">
+              <div class="aspect-square bg-surface-container overflow-hidden mb-4 relative">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdOGIZGdVseJ1006nx5sgOcBMMwfcPzWue3GO-1_UxvhG2CuocsULDnd6Jhiq2gvwAeFvMBIbeSyxVppm-4IA41nUS8qllz0tD3ZOb-s9lxKWi36mKPsj5DyriGdCmhHmEzlTCyf8phE7dzkhGHhZy8TL1Vk41adD6W6p_DpBQLqABHB8qs9JRYhGFi8BABtbVG768Q6Cn07wVjryjfdoYaHkdq5HtolQ-StayGv48YfBvk9wDcnnIoBaDDPnXBzx65Xp2n8iSg" alt="Croissant au Beurre" referrerpolicy="no-referrer" />
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              <h3 class="font-display text-xl text-primary mb-1">Croissant au Beurre</h3>
+              <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Twice-folded perfection</p>
+            </div>
+            <!-- MenuItem 4 -->
+            <div class="group">
+              <div class="aspect-square bg-surface-container overflow-hidden mb-4 relative">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaNxV_HSgXRtmdbm9OuyG6sELCzZEG205JYfG-EacWR97JwsrmEl_I5vhR60fk-VAZRgqU07qR3AVwNLzKol390uSex-KCC4m8_OxzS7NGTyrkOCJtd30uL2_V95R7v7gr1zpJ5Sh7ssmbU92BsD0V0ZmLz6NENU0-osLcezYYfw4qAxg54YvTekg1u4u36PEoKG4RbctDXicUTICb65ySQqoyR2HUnw9edAAsVRAQM7JytGJVsF6ecGfxfoSoN-Os1E2sPHyyhw" alt="Religieuse Pistache" referrerpolicy="no-referrer" />
+                <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              <h3 class="font-display text-xl text-primary mb-1">Religieuse Pistache</h3>
+              <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Choux & nut cream</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. OUR STORY -->
+      <section class="py-24 px-6 md:px-12 bg-surface" id="story">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 class="font-display text-5xl text-primary mb-8">Our History</h2>
+            <div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+              <p>Established in 1887 in the heart of Nebelsbad, Mendl's has remained the sole purveyor of exquisite pastries to the Grand Budapest and the wider Republic of Zubrowka for over a century.</p>
+              <p>Every confection is hand-crafted under the strict supervision of our Master Pâtissier, using only the finest ingredients sourced from the alpine meadows and the royal orchards.</p>
+              <div class="pt-6">
+                <p class="font-display italic text-2xl text-primary">— Herr Mendl</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="aspect-[4/5] bg-surface-container-highest p-12 flex flex-col justify-center items-center text-center border-t-8 border-tertiary-container shadow-xl">
+              <span class="text-tertiary-container text-7xl font-bold opacity-100 leading-none">“</span>
+              <p class="font-body italic text-3xl text-primary leading-tight">
+                One does not simply eat a Mendl’s pastry; one experiences a momentary escape into a more refined era of civilization.
+              </p>
+              <span class="text-tertiary-container text-7xl font-bold opacity-100 leading-none rotate-180">“</span>
+            </div>
+            <!-- Decorative element -->
+            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-secondary flex items-center justify-center">
+              <span class="text-surface-bright text-4xl">⚜</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. THE GIFT BOX -->
+      <section class="py-24 px-6 md:px-12 bg-secondary text-surface-bright" id="gift">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <!-- Pink Ribbon -->
+          <div class="w-16 h-24 bg-[#ffc1cc] mx-auto mb-10 relative">
+            <div class="absolute -top-4 -left-4 w-24 h-6 bg-[#ffc1cc] rotate-12"></div>
+            <div class="absolute -top-4 -right-4 w-24 h-6 bg-[#ffc1cc] -rotate-12"></div>
+          </div>
+          <span class="font-label text-xs uppercase tracking-[0.3em] text-tertiary-fixed mb-4 block">Exquisite Packaging</span>
+          <h2 class="font-display text-6xl mb-8 tracking-tighter">The Mendl's Box</h2>
+          <p class="font-body italic text-2xl opacity-90 max-w-2xl mx-auto leading-relaxed mb-12">
+            "Tied with a signature pink ribbon, our boxes are as famous as the contents within. Perfect for grand gestures or quiet apologies."
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <button class="bg-surface-bright text-secondary px-10 py-4 font-label uppercase tracking-widest text-sm hover:bg-tertiary-fixed transition-all">Order a Box</button>
+            <button class="border border-surface-bright text-surface-bright px-10 py-4 font-label uppercase tracking-widest text-sm hover:bg-surface-bright hover:text-secondary transition-all">Gift Services</button>
+          </div>
+        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 text-center">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-tertiary-fixed mx-auto mb-4"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <h4 class="font-display text-xl mb-2">Discrete Delivery</h4>
+            <p class="opacity-70 text-sm">Arriving in our signature blue vans with silent precision.</p>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-tertiary-fixed mx-auto mb-4"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            <h4 class="font-display text-xl mb-2">Hand-Packed</h4>
+            <p class="opacity-70 text-sm">Every courtesan is nestled by hand in archival-quality paper.</p>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-tertiary-fixed mx-auto mb-4"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8v12"/><path d="M19 12H5"/><path d="M12 8V4a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v4"/><path d="M12 8V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v4"/></svg>
+            <h4 class="font-display text-xl mb-2">Calligraphy Notes</h4>
+            <p class="opacity-70 text-sm">Personal messages penned by our in-house clerk.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PRESS & ACCOLADES -->
+      <section class="py-16 bg-primary overflow-hidden">
+        <div class="ticker-wrap overflow-hidden whitespace-nowrap w-full">
+          <div class="ticker">
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"The finest patisserie in the Alpine Sudetenland" — The Zubrowka Gazette</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"Artistry in every bite" — Le Monde</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"A tradition preserved in sugar and lace" — The Daily Telegraph</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"Simply marvelous" — The Grand Budapest Journal</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <!-- Duplicate for seamless scroll -->
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"The finest patisserie in the Alpine Sudetenland" — The Zubrowka Gazette</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"Artistry in every bite" — Le Monde</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"A tradition preserved in sugar and lace" — The Daily Telegraph</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+            <div class="flex items-center gap-16 px-8"><p class="font-display italic text-2xl text-on-primary-container whitespace-nowrap">"Simply marvelous" — The Grand Budapest Journal</p><p class="font-display italic text-2xl text-on-primary-container">✦</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. VISIT -->
+      <section class="py-24 px-6 md:px-12 bg-surface" id="visit">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div class="bg-surface-container-low p-12 border border-tertiary-container/20">
+            <h2 class="font-display text-4xl text-primary mb-10">Visit Our Salon</h2>
+            <div class="space-y-10">
+              <div>
+                <span class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Address</span>
+                <p class="font-headline text-2xl">447 Grand Boulevard<br/>Nebelsbad, Republic of Zubrowka</p>
+              </div>
+              <div class="grid grid-cols-2 gap-8">
+                <div>
+                  <span class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Mon - Fri</span>
+                  <p class="text-lg">07:00 — 19:00</p>
+                </div>
+                <div>
+                  <span class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Sat - Sun</span>
+                  <p class="text-lg">08:00 — 21:00</p>
+                </div>
+              </div>
+              <button class="flex items-center gap-4 text-primary font-label text-xs uppercase tracking-widest border-b border-primary pb-2 hover:gap-6 transition-all">
+                Directions ❧
+              </button>
+            </div>
+          </div>
+          <div class="h-full min-h-[400px] bg-secondary-container relative overflow-hidden flex items-center justify-center">
+            <div class="absolute inset-0 bg-[#f8d7da] opacity-20 diagonal-grid"></div>
+            <div class="relative z-10 text-center">
+              <div class="w-6 h-6 bg-primary rounded-full animate-ping absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+              <div class="w-4 h-4 bg-primary rounded-full relative z-20"></div>
+              <p class="mt-6 font-display text-primary text-2xl">Find Us in Nebelsbad</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. NEWSLETTER -->
+      <section class="py-24 px-6 md:px-12 bg-surface-container">
+        <div class="max-w-3xl mx-auto text-center border-[3px] border-tertiary-container p-12 md:p-20 relative">
+          <!-- Decorative Corners -->
+          <div class="absolute -top-3 -left-3 bg-surface-container px-2 text-tertiary-container">⚜</div>
+          <div class="absolute -top-3 -right-3 bg-surface-container px-2 text-tertiary-container">⚜</div>
+          <div class="absolute -bottom-3 -left-3 bg-surface-container px-2 text-tertiary-container">⚜</div>
+          <div class="absolute -bottom-3 -right-3 bg-surface-container px-2 text-tertiary-container">⚜</div>
+          <h2 class="font-display text-4xl text-primary mb-6">The Ledger of Sweets</h2>
+          <p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
+            Join our private correspondence list to receive news of seasonal offerings and exclusive events.
+          </p>
+          <form class="flex flex-col md:flex-row gap-4" onsubmit="event.preventDefault()">
+            <input 
+              class="flex-1 bg-surface border-none border-b border-outline-variant focus:ring-0 font-label text-xs tracking-widest p-4 outline-none" 
+              placeholder="YOUR EMAIL ADDRESS" 
+              type="email"
+            />
+            <button class="bg-primary text-on-primary px-10 py-4 font-label text-xs uppercase tracking-[0.2em] hover:scale-105 transition-all">Subscribe</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 10. FOOTER -->
+      <footer class="bg-[#1e1b15] text-surface-bright pt-20 pb-12 px-12 border-t-[6px] border-tertiary-container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start max-w-7xl mx-auto">
+          <div class="text-center md:text-left">
+            <span class="text-3xl font-display text-tertiary-container mb-4 block">Mendl's</span>
+            <p class="font-body italic text-lg opacity-70">
+              Purveyors of fine pastries since 1887.
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-4">
+            <div class="flex gap-8">
+              <a class="font-display italic text-lg text-surface-bright/80 hover:text-tertiary-container transition-colors" href="#">The Grand Budapest</a>
+              <a class="font-display italic text-lg text-surface-bright/80 hover:text-tertiary-container transition-colors" href="#">Shipping Policy</a>
+            </div>
+            <div class="flex gap-8">
+              <a class="font-display italic text-lg text-surface-bright/80 hover:text-tertiary-container transition-colors" href="#">Press Enquiries</a>
+              <a class="font-display italic text-lg text-surface-bright/80 hover:text-tertiary-container transition-colors" href="#">Contact the Clerk</a>
+            </div>
+          </div>
+          <div class="text-center md:text-right flex flex-col items-center md:items-end">
+            <div class="flex gap-6 mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover:text-tertiary-container cursor-pointer transition-colors"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover:text-tertiary-container cursor-pointer transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover:text-tertiary-container cursor-pointer transition-colors"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <p class="text-xs font-label opacity-40 uppercase tracking-widest">
+              Nebelsbad | Zubrowka
+            </p>
+          </div>
+        </div>
+        <div class="mt-20 pt-8 border-t border-surface-bright/10 text-center">
+          <p class="text-xs font-label uppercase tracking-[0.2em] opacity-40 mb-4">
+            © 1932 Mendl's Patisserie. Purveyors to the Republic of Zubrowka.
+          </p>
+          <span class="text-tertiary-container text-2xl">❧</span>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
