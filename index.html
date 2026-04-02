@@ -13,10 +13,10 @@
         
         <!-- Desktop Links -->
         <div class="hidden md:flex items-center gap-10">
-          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary font-bold border-b border-tertiary-container" href="#story">Our Story</a>
-          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#menu">The Patisserie</a>
-          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#visit">Locations</a>
-          <a class="font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#gift">Special Deliveries</a>
+          <a class="desktop-link font-headline uppercase tracking-[0.2em] text-xs text-primary font-bold border-b border-tertiary-container" href="#story">Our Story</a>
+          <a class="desktop-link font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#menu">The Patisserie</a>
+          <a class="desktop-link font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#visit">Locations</a>
+          <a class="desktop-link font-headline uppercase tracking-[0.2em] text-xs text-primary/70 hover:text-primary transition-transform duration-300 ease-out hover:scale-105" href="#gift">Special Deliveries</a>
         </div>
 
         <div class="flex items-center gap-4 relative z-50">
@@ -269,12 +269,77 @@
               </button>
             </div>
           </div>
-          <div class="h-full min-h-[400px] bg-secondary-container relative overflow-hidden flex items-center justify-center">
-            <div class="absolute inset-0 bg-[#f8d7da] opacity-20 diagonal-grid"></div>
-            <div class="relative z-10 text-center">
-              <div class="w-6 h-6 bg-primary rounded-full animate-ping absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-              <div class="w-4 h-4 bg-primary rounded-full relative z-20"></div>
-              <p class="mt-6 font-display text-primary text-2xl">Find Us in Nebelsbad</p>
+          <div class="h-full min-h-[400px] bg-background relative overflow-hidden flex items-center justify-center border-l-2 border-tertiary">
+            <!-- Imaginary City Map SVG -->
+            <svg class="absolute inset-0 w-full h-full object-cover opacity-80" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <!-- Base Land -->
+              <rect width="800" height="600" fill="var(--color-background)" />
+              
+              <!-- River winding through -->
+              <path d="M 150,-50 Q 350,300 150,650" fill="none" stroke="var(--color-secondary-container)" stroke-width="100" />
+              
+              <!-- Grid Streets -->
+              <g stroke="var(--color-surface-container-highest)" stroke-width="12">
+                <!-- Horizontals -->
+                <line x1="0" y1="100" x2="800" y2="100" />
+                <line x1="0" y1="200" x2="800" y2="200" />
+                <line x1="0" y1="300" x2="800" y2="300" stroke-width="24" />
+                <line x1="0" y1="400" x2="800" y2="400" />
+                <line x1="0" y1="500" x2="800" y2="500" />
+                
+                <!-- Verticals -->
+                <line x1="100" y1="0" x2="100" y2="600" />
+                <line x1="250" y1="0" x2="250" y2="600" />
+                <line x1="400" y1="0" x2="400" y2="600" stroke-width="24" />
+                <line x1="550" y1="0" x2="550" y2="600" />
+                <line x1="700" y1="0" x2="700" y2="600" />
+
+                <!-- Diagonal Boulevards -->
+                <line x1="50" y1="-50" x2="750" y2="650" stroke-width="8" />
+                <line x1="50" y1="650" x2="750" y2="-50" stroke-width="8" />
+              </g>
+
+              <!-- Town Square (Center) -->
+              <circle cx="400" cy="300" r="100" fill="var(--color-background)" stroke="var(--color-surface-container-highest)" stroke-width="16" />
+              <circle cx="400" cy="300" r="80" fill="var(--color-surface-container-low)" />
+              
+              <!-- Parks -->
+              <g fill="var(--color-surface-container-highest)">
+                <rect x="430" y="130" width="90" height="40" rx="20" />
+                <rect x="580" y="330" width="90" height="40" rx="20" />
+                <rect x="130" y="430" width="90" height="40" rx="20" />
+                <circle cx="250" cy="100" r="30" />
+                <circle cx="550" cy="500" r="30" />
+              </g>
+              
+              <!-- Buildings (Stylized blocks) -->
+              <g fill="var(--color-error-container)">
+                <rect x="290" y="190" width="80" height="80" />
+                <rect x="430" y="190" width="80" height="80" />
+                <rect x="290" y="330" width="80" height="80" />
+                <rect x="430" y="330" width="80" height="80" />
+              </g>
+              
+              <!-- Mendl's Building (Center) -->
+              <rect x="360" y="260" width="80" height="80" fill="var(--color-inverse-primary)" rx="8" />
+            </svg>
+
+            <!-- Map Overlay Texture -->
+            <div class="absolute inset-0 bg-[#f8d7da] opacity-10 diagonal-grid mix-blend-multiply"></div>
+            
+            <div class="relative z-10 text-center flex flex-col items-center">
+              <!-- Map Marker -->
+              <div class="relative flex items-center justify-center mb-4">
+                <div class="w-12 h-12 bg-primary rounded-full animate-ping absolute opacity-75"></div>
+                <div class="w-6 h-6 bg-primary rounded-full relative z-20 border-2 border-surface"></div>
+                <!-- Pin point -->
+                <div class="w-1 h-6 bg-primary absolute top-4 z-10"></div>
+              </div>
+              
+              <div class="bg-surface/90 backdrop-blur-sm px-6 py-3 border-2 border-tertiary-container mt-4">
+                <p class="font-display text-primary text-2xl m-0 leading-none">Find Us in Nebelsbad</p>
+                <p class="font-label text-xs uppercase tracking-widest text-primary/70 mt-2">No. 14, The Grand Avenue</p>
+              </div>
             </div>
           </div>
         </div>

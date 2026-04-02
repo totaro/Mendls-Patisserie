@@ -47,4 +47,40 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Desktop navigation active state
+  const desktopLinks = document.querySelectorAll('.desktop-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  const updateNav = (id: string) => {
+    desktopLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${id}`) {
+        link.classList.add('text-primary', 'font-bold', 'border-b', 'border-tertiary-container');
+        link.classList.remove('text-primary/70', 'hover:text-primary', 'transition-transform', 'duration-300', 'ease-out', 'hover:scale-105');
+      } else {
+        link.classList.remove('text-primary', 'font-bold', 'border-b', 'border-tertiary-container');
+        link.classList.add('text-primary/70', 'hover:text-primary', 'transition-transform', 'duration-300', 'ease-out', 'hover:scale-105');
+      }
+    });
+  };
+
+  // Update nav on click
+  desktopLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLAnchorElement;
+      const id = target.getAttribute('href')?.substring(1);
+      if (id) updateNav(id);
+    });
+  });
+
+  // Update nav on scroll
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        updateNav(entry.target.id);
+      }
+    });
+  }, { rootMargin: '-30% 0px -70% 0px' });
+
+  sections.forEach(section => scrollObserver.observe(section));
 });
